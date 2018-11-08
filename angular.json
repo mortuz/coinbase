@@ -27,9 +27,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "src/assets/scss/blk-design-system.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/core/jquery.min.js",
+              "src/assets/js/core/popper.min.js",
+              "src/assets/js/core/bootstrap.min.js",
+              "src/assets/js/blk-design-system.min.js"            ]
           },
           "configurations": {
             "production": {

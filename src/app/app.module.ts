@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CryptoComponent } from './pages/crypto/crypto.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CryptoComponent
+    CryptoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

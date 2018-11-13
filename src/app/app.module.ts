@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CryptoComponent } from './pages/crypto/crypto.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MarketItemComponent } from './components/market-item/market-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CryptoComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    MarketItemComponent
   ],
   imports: [
     BrowserModule,

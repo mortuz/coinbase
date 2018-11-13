@@ -76,22 +76,24 @@ export class CryptoComponent implements OnInit {
 
     let gradientStroke;
 
-    gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+    gradientStroke = ctx.createLinearGradient(600, 0, 100, 0.1);
     gradientStroke.addColorStop(0, '#80b6f4');
     gradientStroke.addColorStop(1, chartColor);
 
     let gradientFill;
 
-    gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
-    gradientFill.addColorStop(0, 'rgba(128, 182, 244, 0)');
+    gradientFill = ctx.createLinearGradient(0, 600, 0, 350);
+    gradientFill.addColorStop(0, 'rgba(128, 182, 244, 0.2)');
     gradientFill.addColorStop(1, 'rgba(249, 99, 59, 0.40)');
+
+    console.log(gradientFill);
 
     this.chart = new Chart(canvas, {
       type: 'line',
       data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
-          label: 'Active Users',
+          label: 'BTC',
           borderColor: '#f96332',
           pointBorderColor: '#FFF',
           pointBackgroundColor: '#f96332',

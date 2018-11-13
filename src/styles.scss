@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "https://use.fontawesome.com/releases/v5.0.6/css/all.css";
+.flag-min {
+    background: url(./assets/img/flags/flags-min-sprite.png) no-repeat top left;
+    width: 16px;
+    height: 11px;
+    display: inline-block;
+    &.us {
+      background-position: 0 -372px;
+    }
+}

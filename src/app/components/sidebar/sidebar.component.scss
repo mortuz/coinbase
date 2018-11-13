@@ -6,6 +6,10 @@
 
     transition: all 0.3s;
     background: #222a42 !important;
+
+    .dropdown-toggle::after {
+      float: right;
+    }
   }
 
   #sidebar .sidebar-header {
@@ -21,15 +25,21 @@
     padding: 10px;
   }
 
-  #sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-    color: rgba(#fff, 0.5);
+  #sidebar ul li * {
+    // padding: 10px;
+    // font-size: 1.1em;
+    // display: block;
+    // color: rgba(#fff, 0.5);
+    opacity: 0.85;
+    transition: all 0.3s;
   }
   #sidebar > ul > li > a {
     border-top: 1px solid rgba(#fff, 0.1);
     color: #fff !important;
+    opacity: 1;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
   }
   #sidebar ul li a:hover {
     color: #7386d5;

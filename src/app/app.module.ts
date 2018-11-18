@@ -7,6 +7,7 @@ import { CryptoComponent } from './pages/crypto/crypto.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MarketItemComponent } from './components/market-item/market-item.component';
+import { SidebarLeftComponent } from './components/sidebar-left/sidebar-left.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MarketItemComponent } from './components/market-item/market-item.compon
     CryptoComponent,
     NavbarComponent,
     SidebarComponent,
-    MarketItemComponent
+    MarketItemComponent,
+    SidebarLeftComponent
   ],
   imports: [
     BrowserModule,

@@ -22,15 +22,15 @@
   padding: 10px;
 }
 
-#sidebar ul li * {
-  opacity: 0.85;
+#sidebar ul li img {
+  opacity: 0.3;
   transition: all 0.3s;
 }
 #sidebar > ul > li > a {
   border-top: 1px solid rgba(#fff, 0.1);
   color: #fff !important;
   opacity: 1;
-  padding: 10px;
+  padding: 18px 10px;
   font-size: 1.1em;
   display: block;
 }
@@ -42,10 +42,6 @@
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
   color: #fff;
-}
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
 }
 
 .collapse-section {
@@ -140,4 +136,117 @@ ul ul a {
 }
 .collapse-section:hover .collapse-section__button {
     opacity: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1;
+}
+.carousel-caption p {
+  color: rgba(#fff, 0.9);
+  font-size: 12px;
+}
+.carousel-caption h5 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  line-height: 0.9;
+}
+
+.tile__item {
+    background: rgba(14, 15, 26, 0.25);
+    margin-bottom: 0.1875rem;
+    padding: 0.625rem;
+}
+.shoutbox-rooms__item {
+    cursor: pointer;
+    background: none;
+    &:hover {
+      background-color: rgba(#fff, 0.1);
+    }
+}
+
+.shoutbox-rooms__item {
+    position: relative;
+}
+.justify-start {
+    -webkit-box-pack: start !important;
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+}
+
+.flex-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.shoutbox-room__icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+.shoutbox-rooms__icon {
+    padding: 0.5rem;
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: #1a2330;
+    color: #354759;
+    -webkit-transition: 0.5s color ease;
+    transition: 0.5s color ease;
+}
+.shoutbox-room__icon i {
+    font-size: 1.5rem;
+}
+.align-start {
+    -webkit-box-align: start !important;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+}
+
+.flex-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.full-width {
+    width: 100%;
+}
+.shoutbox-rooms__room-title {
+    // font-family: "Rubik", sans-serif;
+    font-size: 1.25rem;
+    color: #01e4ff;
+}
+.shoutbox-rooms__room-title {
+    font-size: 1rem;
+}
+.shoutbox-rooms__message-preview {
+    font-size: 0.8rem;
+    color: #c6d2db;
 }

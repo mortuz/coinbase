@@ -24,6 +24,7 @@ export class CryptoComponent implements OnInit {
     // General configuration for the charts with Line gradientStroke
     const gradientChartOptionsConfiguration = {
       maintainAspectRatio: false,
+      bezierCurve: false,
       legend: {
         display: false
       },
@@ -102,7 +103,7 @@ export class CryptoComponent implements OnInit {
           pointHoverBorderWidth: 1,
           pointRadius: 4,
           fill: true,
-          backgroundColor: gradientFill,
+          backgroundColor: 'rgba(0,0,0,0)',
           borderWidth: 2,
           data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
         }]

@@ -1,5 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "https://use.fontawesome.com/releases/v5.0.6/css/all.css";
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+body {
+    margin: 0 auto;
+    padding: 0;
+    background: #263749;
+    // font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #eeeeee;
+    overflow: hidden;
+}
+html, body, .app-wrapper, perfect-scrollbar {
+    height: 100%;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
 .flag-min {
     background: url(./assets/img/flags/flags-min-sprite.png) no-repeat top left;
     width: 16px;

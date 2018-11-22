@@ -9,6 +9,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MarketItemComponent } from './components/market-item/market-item.component';
 import { SidebarLeftComponent } from './components/sidebar-left/sidebar-left.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SidebarLeftComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, PerfectScrollbarModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

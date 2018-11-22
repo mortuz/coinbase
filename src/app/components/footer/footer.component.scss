@@ -20,7 +20,7 @@
 .tabs .tab {
     position: relative;
     line-height: 1;
-    padding: 0.25rem 1.875rem;
+    padding: 1.1rem 1.875rem;
     border-radius: 3px 3px 0 0;
     border-bottom: 2px solid transparent;
     text-transform: uppercase;
@@ -29,8 +29,14 @@
     margin-right: 0.3125rem;
     min-width: 7.8125rem;
     background: transparent;
-    -webkit-box-shadow: none !important;
     box-shadow: none !important;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: transparent !important;
+      background-image: none !important;
+      color: #fff;
+    }
 }
 .tabs .tab__badge {
     background-color: rgba(26, 35, 48, 0.5);

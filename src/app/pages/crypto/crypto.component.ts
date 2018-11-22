@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as $ from 'jquery';
 
@@ -9,25 +9,24 @@ import * as $ from 'jquery';
 })
 export class CryptoComponent implements OnInit {
 
-  @ViewChild('canvas') canvas: ElementRef;
-
   chart = [];
+  @ViewChild('canvas') canvas: ElementRef;
+  rightSidebarWidth = 325;
+  leftSidebarWidth = 330;
+  shouldMoveRightSidebar = false;
+  shouldMoveLeftSidebar = false;
+  maxLeftSidebarWidth = 464;
+  maxRightSidebarWidth = 400;
 
   constructor() { }
 
   ngOnInit() {
+    $('.dashboard__column--left').width(this.leftSidebarWidth);
+
+    $('.dashboard__column--right').width(this.rightSidebarWidth);
+
+    $('.dahsboard__main').css({ width: ($(window).width() - this.rightSidebarWidth - this.leftSidebarWidth) + 'px' });
     this.loadChart();
-    $('.dashboard__column--left').css({
-      'width': '325px',
-      'max-width': '325px'
-    });
-
-    $('.dashboard__column--right').css({
-      'width': '330px',
-      'max-width': '330px'
-    });
-
-    $('.dahsboard__main').css({ width: ($(window).width() - 655) + 'px' });
   }
 
   loadChart() {
@@ -53,26 +52,26 @@ export class CryptoComponent implements OnInit {
       scales: {
         yAxes: [
           {
-          display: 0,
-          // gridLines: 0,
-          ticks: {
-            display: false
-          },
-          gridLines: {
-            zeroLineColor: 'transparent',
-            drawTicks: false,
-            display: false,
-            drawBorder: false
-          }
-        }],
-        xAxes: [{
-          display: 0,
-          // gridLines: 0,
-          ticks: {
-            display: false
-          },
-          gridLines: {
-            zeroLineColor: 'transparent',
+            display: 0,
+            // gridLines: 0,
+            ticks: {
+              display: false
+            },
+            gridLines: {
+              zeroLineColor: 'transparent',
+              drawTicks: false,
+              display: false,
+              drawBorder: false
+            }
+          }],
+          xAxes: [{
+            display: 0,
+            // gridLines: 0,
+            ticks: {
+              display: false
+            },
+            gridLines: {
+              zeroLineColor: 'transparent',
             drawTicks: false,
             display: false,
             drawBorder: false
@@ -99,8 +98,6 @@ export class CryptoComponent implements OnInit {
     gradientFill.addColorStop(0, 'rgba(128, 182, 244, 0.2)');
     gradientFill.addColorStop(1, 'rgba(249, 99, 59, 0.40)');
 
-    console.log(gradientFill);
-
     this.chart = new Chart(canvas, {
       type: 'line',
       data: {
@@ -124,4 +121,53 @@ export class CryptoComponent implements OnInit {
     });
   }
 
+  _windowResized() {
+    this.__setMainContentWidth();
+  }
+  onLeftCollapseMouseDown(e) {
+    this.shouldMoveLeftSidebar = true;
+  }
+  onRightCollapseMouseDown(e) {
+    this.shouldMoveRightSidebar = true;
+  }
+
+  resizeLeftSidebar(e) {
+    if (this.shouldMoveLeftSidebar) {
+      const width = e.x;
+      if (width <= this.maxLeftSidebarWidth) {
+        this.leftSidebarWidth = e.x;
+        $('.dashboard__column--left').width(this.leftSidebarWidth);
+        this.__setMainContentWidth();
+
+      }
+    }
+  }
+  resizeRightSidebar(e) {
+    if (this.shouldMoveRightSidebar) {
+      const width = $(window).width() - e.x;
+
+      if (width <= 400) {
+        this.rightSidebarWidth = $(window).width() - e.x;
+        $('.dashboard__column--right').width(this.rightSidebarWidth);
+        this.__setMainContentWidth();
+      }
+    }
+  }
+
+  __setMainContentWidth() {
+    $('.dashboard__main').width($(window).width() - this.rightSidebarWidth - this.leftSidebarWidth);
+    $('canvas').width($(window).width() - this.leftSidebarWidth - this.rightSidebarWidth);
+  }
+
+  @HostListener('window:resize') onResize() {this._windowResized(); }
+  @HostListener('document:mousemove', ['$event']) onMouuseMove(e) {
+    if (this.shouldMoveLeftSidebar) {
+      this.resizeLeftSidebar(e);
+    } else if (this.shouldMoveRightSidebar) {
+      this.resizeRightSidebar(e);
+    }
+  }
+  @HostListener('document:mouseup', ['$event']) onMouuseUp(e) {
+    this.shouldMoveLeftSidebar = this.shouldMoveRightSidebar = false;
+  }
 }

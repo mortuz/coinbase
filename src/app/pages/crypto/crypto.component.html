@@ -1,32 +1,28 @@
 <!-- <app-navbar></app-navbar> -->
 <div class="main-container">
   <main class="dashboard">
-    <!-- <div class="container-fluid p-0">
-      <div class="row no-gutters">
-        <aside class="col-2"> -->
-          <div class="dashboard__column dashboard__column--left">
-            <app-sidebar></app-sidebar>
-          </div>
-        <!-- </aside> -->
 
+    <div class="dashboard__column dashboard__column--left">
+      <div class="collapse-section collapse-section--vertical collapse-section--left" (mousedown)="onLeftCollapseMouseDown($event)">
+        <button class="collapse-section__button collapse-section__button--vertical"></button>
+      </div>
+      <app-sidebar></app-sidebar>
+    </div>
 
-        <!-- <section class="col-8"> -->
-          <div class="dashboard__main">
-            <div class="chart-container" style="height: 600px;">
-                <canvas #canvas id="canvas">{{ chart }}</canvas>
-            </div>
+    <div class="dashboard__main">
+      <div class="chart-container" style="height: 600px;">
+          <canvas #canvas id="canvas">{{ chart }}</canvas>
+      </div>
+    </div>
 
-          </div>
-        <!-- </section> -->
+    <div class="dashboard__column dashboard__column--right">
 
-        <!-- <aside class="col-2"> -->
-          <div class="dashboard__column dashboard__column--right">
-            <app-sidebar-left></app-sidebar-left>
-          </div>
-        <!-- </aside> -->
+      <div  class="collapse-section collapse-section--vertical collapse-section--right" (mousedown)="onRightCollapseMouseDown($event)">
+        <button class="collapse-section__button collapse-section__button--vertical"></button>
+      </div>
+      <app-sidebar-left></app-sidebar-left>
+    </div>
 
-      <!-- </div> -->
-    <!-- </div> -->
   </main>
   <app-footer class="footer"></app-footer>
 </div>

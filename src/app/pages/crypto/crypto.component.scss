@@ -2,6 +2,48 @@
 h2 {
     color: white;
 }
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
 .chart-container {
   padding: 10px;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #263749;
+    border-top: 1px solid #1a2330;
+    height: 3.75rem;
+    padding: 0 0.875rem;
+    z-index: 1;
+}
+.dashboard {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    max-height: calc(100% - 3.75rem);
+}
+.dashboard__column {
+    position: relative;
+    background: #263749;
+    z-index: 1;
+}
+.dashboard__column--right {
+    padding-left: 2px;
+}
+.dashboard__column--left {
+    padding: 60px 2px 0 0;
+}
+.dashboard__main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    background: #1a2330;
+    padding: 0 1px;
 }

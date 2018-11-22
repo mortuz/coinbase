@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Chart } from 'chart.js';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-crypto',
@@ -16,6 +17,17 @@ export class CryptoComponent implements OnInit {
 
   ngOnInit() {
     this.loadChart();
+    $('.dashboard__column--left').css({
+      'width': '325px',
+      'max-width': '325px'
+    });
+
+    $('.dashboard__column--right').css({
+      'width': '330px',
+      'max-width': '330px'
+    });
+
+    $('.dahsboard__main').css({ width: ($(window).width() - 655) + 'px' });
   }
 
   loadChart() {

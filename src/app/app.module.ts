@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MarketItemComponent } from './components/market-item/market-item.component';
 import { SidebarLeftComponent } from './components/sidebar-left/sidebar-left.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SidebarLeftComponent } from './components/sidebar-left/sidebar-left.com
     NavbarComponent,
     SidebarComponent,
     MarketItemComponent,
-    SidebarLeftComponent
+    SidebarLeftComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,33 @@
-<app-navbar></app-navbar>
-<section>
-  <div class="container-fluid p-0">
-    <div class="row no-gutters">
-      <aside class="col-2">
+<!-- <app-navbar></app-navbar> -->
+<div class="main-container">
+  <main class="dashboard">
+    <!-- <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <aside class="col-2"> -->
+          <div class="dashboard__column dashboard__column--left">
+            <app-sidebar></app-sidebar>
+          </div>
+        <!-- </aside> -->
 
-        <app-sidebar></app-sidebar>
-      </aside>
 
+        <!-- <section class="col-8"> -->
+          <div class="dashboard__main">
+            <div class="chart-container" style="height: 600px;">
+                <canvas #canvas id="canvas">{{ chart }}</canvas>
+            </div>
 
-      <main class="col-8">
-        <div class="chart-container" style="height: 600px;">
-          <canvas #canvas id="canvas">{{ chart }}</canvas>
-        </div>
-      </main>
+          </div>
+        <!-- </section> -->
 
-      <aside class="col-2">
-        <app-sidebar-left></app-sidebar-left>
-      </aside>
+        <!-- <aside class="col-2"> -->
+          <div class="dashboard__column dashboard__column--right">
+            <app-sidebar-left></app-sidebar-left>
+          </div>
+        <!-- </aside> -->
 
-    </div>
-  </div>
-</section>
+      <!-- </div> -->
+    <!-- </div> -->
+  </main>
+  <app-footer class="footer"></app-footer>
+</div>
+

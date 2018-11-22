@@ -36,7 +36,8 @@
               "src/assets/js/core/jquery.min.js",
               "src/assets/js/core/popper.min.js",
               "src/assets/js/core/bootstrap.min.js",
-              "src/assets/js/blk-design-system.min.js"
+              "src/assets/js/blk-design-system.min.js",
+              "src/assets/js/app.js"
             ]
           },
           "configurations": {

@@ -601,6 +601,8 @@ MIT
 
 @angular/material/checkbox
 
+@angular/material/slide-toggle
+
 angular-font-awesome
 MIT
 The MIT License

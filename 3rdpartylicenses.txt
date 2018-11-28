@@ -596,6 +596,11 @@ MIT
 
 @angular/material/menu
 
+@angular/forms
+MIT
+
+@angular/material/checkbox
+
 angular-font-awesome
 MIT
 The MIT License

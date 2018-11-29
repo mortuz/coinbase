@@ -603,6 +603,14 @@ MIT
 
 @angular/material/slide-toggle
 
+@angular/material/select
+
+@angular/material/core
+
+@angular/material/autocomplete
+
+@angular/material/dialog
+
 angular-font-awesome
 MIT
 The MIT License
